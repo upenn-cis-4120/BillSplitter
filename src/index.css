@@ -44,16 +44,17 @@ body {
 
 /* App Container */
 .App {
-    max-width: 1400px;
-    /* Increased width for a wider layout */
-    margin: 0;
+    max-width: 75vh; /* Set width to 75% of viewport height */
+    margin: 0 auto;
     padding: 0;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%; /* Ensure it stretches to 100% height */
 }
+
+
 /* Button Styles */
 button,
 .button,
@@ -149,17 +150,20 @@ h3 {
     /* Set a max-width for better readability */
 }
 
-/* Navbar Styles for Compact Bottom Alignment */
+/* Navbar */
 .navbar {
     position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Center navbar horizontally */
+    width: 100%; /* Full width of the parent */
+    max-width: 75vh; /* Ensure navbar width matches the container */
     background-color: var(--secondary-color);
     padding: 5px 0;
     box-shadow: 0 -2px 5px var(--shadow-color);
     z-index: 1000;
 }
+
 
 /* Horizontal Alignment for Navbar Links */
 .navbar-links {

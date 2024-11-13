@@ -1,0 +1,513 @@
+/* Theme Variables */
+:root {
+    --primary-color: #d32f2f;
+    /* Red for primary actions */
+    --primary-hover-color: #b71c1c;
+    /* Darker red for hover effects */
+    --secondary-color: #1976d2;
+    /* Blue for secondary accents */
+    --secondary-hover-color: #1565c0;
+    /* Darker blue for secondary hover */
+    --background-color: #f0f4ff;
+    /* Light blue background */
+    --text-color: #333;
+    --white-color: #fff;
+    --light-gray: #f9f9f9;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --paid-color: #2e7d32;
+    /* Green for paid status */
+    --unpaid-color: var(--primary-color);
+    /* Red for unpaid status */
+    --font-family: Arial, sans-serif;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Body Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* App Container */
+.App {
+    max-width: 1400px;
+    /* Increased width for a wider layout */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Button Styles */
+button,
+.button,
+.capture-button,
+.retake-button,
+.edit-button,
+.save-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    padding: 15px 25px;
+    /* Increased padding for a larger, more clickable button */
+    font-size: 18px;
+    /* Slightly larger font size for readability */
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    /* Increased max-width to prevent the buttons from being too narrow */
+    text-align: center;
+}
+
+button:hover,
+.button:hover,
+.capture-button:hover,
+.retake-button:hover,
+.edit-button:hover,
+.save-button:hover {
+    background-color: var(--primary-color);
+    /* Solid red background on hover */
+    color: var(--white-color);
+    /* White text on hover */
+}
+
+/* Specific Button Colors for Edit and Save */
+.edit-button {
+    border: 2px solid var(--secondary-color);
+    background-color: var(--secondary-color);
+    /* Blue background */
+    color: var(--white-color);
+    /* White text color */
+}
+
+.edit-button:hover {
+    background-color: var(--secondary-hover-color);
+    color: var(--white-color);
+    /* White text on hover */
+}
+
+.save-button {
+    border: 2px solid var(--primary-color);
+    /* Red border for primary buttons */
+}
+
+.save-button:hover {
+    background-color: var(--primary-color);
+    /* Red background on hover */
+    color: var(--white-color);
+    /* White text on hover */
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    margin-bottom: 30px;
+    /* Add more space under headings */
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 28px;
+    /* Increased font size for headings */
+}
+
+/* Container Styles */
+.container,
+.register,
+.bills-page,
+.profile-container,
+.camera-page {
+    background-color: var(--white-color);
+    padding: 30px;
+    /* Increased padding for more space */
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px var(--shadow-color);
+    /* Slightly larger shadow for more depth */
+    margin: 30px 0;
+    /* More margin between containers */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    /* Set a max-width for better readability */
+}
+
+/* Navbar Styles for Compact Bottom Alignment */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 5px 0;
+    box-shadow: 0 -2px 5px var(--shadow-color);
+    z-index: 1000;
+}
+
+/* Horizontal Alignment for Navbar Links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    /* Fill the container */
+    margin: 3;
+    /* Remove margin */    
+    /* Smaller vertical and horizontal padding */    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    background-color: transparent;
+    /* Transparent background */
+    gap: 15px;
+    
+    justify-content: center;
+    padding: 0;
+            /* Remove padding */
+    margin-bottom: 0;
+    align-items: center;
+        /* Vertically align the navbar list elements */
+}
+
+/* Navbar Link Styles - Smaller and Horizontal */
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transparent 0.3s ease, color 0.3s ease;
+    flex-grow: 1;
+    /* Make each link fill the container equally */
+    text-align: center;
+    /* Center the text within each link */
+}
+.dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.balance-section {
+    background-color: var(--light-gray);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.balance-section h3 {
+    color: var(--primary-color);
+    /* Red color for the balance text */
+    font-size: 22px;
+    margin: 0;
+}
+.friends-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.add-friend-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-friend-section input,
+.add-friend-section button {
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+}
+/* Conditional Styling for Amount Owed */
+.owe {
+    color: var(--primary-color);
+    /* Red for debts (you owe them) */
+}
+
+.owed {
+    color: var(--paid-color);
+    /* Green when they owe you */
+}
+.nav-link:hover,
+.nav-link:focus {
+    background-color: var(--primary-hover-color);
+        color: var(--white-color);
+    padding: 0px 0px;
+                /* Smaller padding on hover */
+        /* Smaller padding on hover */
+}
+
+.active-link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* Logout Button - Styled to Match Links */
+.logout-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover,
+.logout-button:focus {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* Bills Page - Transactions List */
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Increased gap between transactions */
+    width: 100%;
+}
+
+.transaction-item {
+    padding: 20px;
+    /* Increased padding inside each transaction */
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    background-color: var(--light-gray);
+    box-shadow: 0 1px 3px var(--shadow-color);
+    width: 100%;
+}
+
+.transaction-item p {
+    margin: 10px 0;
+    /* Increased margin between text lines */
+    font-size: 16px;
+}
+
+.transaction-item .status {
+    font-weight: bold;
+}
+
+.transaction-item .status.paid {
+    color: var(--paid-color);
+}
+
+.transaction-item .status.unpaid {
+    color: var(--unpaid-color);
+}
+Copy code .transaction-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    background-color: var(--light-gray);
+    box-shadow: 0 1px 3px var(--shadow-color);
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.transaction-item p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.transaction-details {
+    margin-top: 10px;
+    padding-left: 15px;
+    border-left: 2px solid var(--primary-color);
+}
+
+.status.paid {
+    color: var(--paid-color);
+}
+
+.status.unpaid {
+    color: var(--unpaid-color);
+}
+
+/* Form and Input Styles */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+.register input,
+.transaction-item p {
+    padding: 15px;
+    /* Increased padding for inputs */
+    font-size: 16px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 20px;
+    /* Add space below inputs */
+}
+
+/* Profile Details */
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Increased gap between profile details */
+    width: 100%;
+}
+
+/* Sorting Dropdown Styles */
+.sort-options {
+    margin-bottom: 30px;
+    /* Ensure there's enough space between the dropdown and other elements */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Space between label and select box */
+}
+
+.sort-options label {
+    font-size: 16px;
+    /* Label text size */
+    color: var(--text-color);
+    /* Make sure label is visible */
+}
+
+.sort-options select {
+    padding: 10px;
+    /* Add padding for a larger clickable area */
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    /* Visible border */
+    font-size: 16px;
+    /* Ensure the font size matches the rest of the UI */
+    background-color: var(--white-color);
+    /* Ensure it's visible on light backgrounds */
+    color: var(--text-color);
+}
+
+/* Camera Placeholder */
+.camera-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 1.2em;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    /* Increased padding */
+    background-color: var(--light-gray);
+    margin-bottom: 15px;
+    /* Increased margin between list items */
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px var(--shadow-color);
+    width: 100%;
+}
+.friends-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.add-friend-section {
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-friend-section input {
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    width: 100%;
+    /* Full width */
+}
+
+.add-friend-section button {
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    /* Full width */
+}
+
+.add-friend-section button:hover {
+    background-color: var(--primary-hover-color);
+}
+.navbar-links li {
+    padding: 0;
+    align-items: center;
+        /* Vertically align the navbar list elements */
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .App,
+    .container,
+    .register,
+    .bills-page,
+    .profile-container,
+    .camera-page {
+        padding: 20px;
+        /* Slightly smaller padding for mobile */
+        margin: 20px 0;
+    }
+
+    .navbar {
+        justify-content: space-between;
+        /* Adjust spacing for smaller screens */
+    }
+
+    .navbar-links {
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+        overflow-x: auto;
+        /* Allow horizontal scrolling if needed */
+        padding: 0;
+    }
+
+    .transaction-item,
+    li {
+        padding: 15px;
+    }
+
+    .camera-placeholder {
+        height: 200px;
+    }
+
+    button,
+    .button {
+        font-size: 16px;
+    }
+}

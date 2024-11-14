@@ -12,7 +12,7 @@ function Home({ user }) {
 
   return (
     <div className="home">
-      <h1>Welcome to MyApp!</h1>
+      <h1>Welcome to BillSplitter!</h1>
       {user ? (
         <div className="home-buttons">
           <Button text="Go to Bills" onClick={() => goToPage('/bills')} />

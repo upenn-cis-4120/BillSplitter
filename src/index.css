@@ -366,6 +366,7 @@ li {
     flex-wrap: nowrap;
     gap: 5px;
     margin-top: 10px;
+    margin-bottom: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -390,13 +391,16 @@ li {
     transform: scale(1.4);
 }
 
-.nav-link:hover {
+.nav-link:hover svg {
+    color: var(--primary-hover-color);
+    transform: scale(1.5);
     /*
     background-color: var(--primary-hover-color);
     */
 }
   
-.active-link {
+.active-link svg {
+    color: var(--primary-hover-color);
     /*
     font-weight: bold;
     background-color: var(--primary-color);

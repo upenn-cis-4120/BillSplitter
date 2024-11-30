@@ -1,37 +1,99 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import React, { useState, lazy, Suspense } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
 import theme from './theme';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Login from './components/Login';
-import Register from './components/Register';
-import Profile from './components/Profile';
-import Dashboard from './components/Dashboard';
-import Bills from './components/Bills';
-import Friends from './components/Friends';
-import Camera from './components/Camera';
+import NotFound from './components/NotFound'; // A new 404 component
+
+// Lazy-loaded components for better performance
+const Home = lazy(() => import('./components/Home'));
+const Login = lazy(() => import('./components/Login'));
+const Register = lazy(() => import('./components/Register'));
+const Profile = lazy(() => import('./components/Profile'));
+const Dashboard = lazy(() => import('./components/Dashboard'));
+const Bills = lazy(() => import('./components/Bills'));
+const Friends = lazy(() => import('./components/Friends'));
+const Camera = lazy(() => import('./components/Camera'));
+
+// PrivateRoute component for authentication
+function PrivateRoute({ user, children }) {
+  return user ? children : <Navigate to="/login" />;
+}
 
 function App() {
   const [user, setUser] = useState(null); // Manages user state
 
+  const navbarPaths = ['/dashboard', '/profile', '/bills', '/friends', '/camera']; // where navbar appears
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App" style={{ maxWidth: '75vh', margin: '0 auto' }}>
-        <Navbar user={user} setUser={setUser} />
-        <Routes>
-          <Route path="/" element={<Home user={user} />} />
-          <Route path="/login" element={<Login setUser={setUser} />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard user={user} />} />
-          <Route path="/profile" element={<Profile user={user} />} />
-          <Route path="/bills" element={<Bills />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/friends" element={<Friends />} />
-          <Route path="/camera" element={<Camera />} />
-        </Routes>
-      </div>
+      <Box sx={{ maxWidth: '75vh', mx: 'auto', px: 2 }}>
+        {navbarPaths.includes(window.location.pathname) && (
+          <Navbar user={user} setUser={setUser} />
+        )}
+        <Suspense fallback={
+          <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+            <CircularProgress />
+          </Box>
+        }>
+          <Routes>
+            {/* Conditional Redirect for Home */}
+            <Route
+              path="/"
+              element={user ? <Navigate to="/dashboard" /> : <Navigate to="/home" />}
+            />
+
+            {/* Public Routes */}
+            <Route path="/login" element={<Login setUser={setUser} />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/home" element={<Home />} />
+
+            {/* Protected Routes */}
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute user={user}>
+                  <Dashboard user={user} />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <PrivateRoute user={user}>
+                  <Profile user={user} setUser={user} />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/bills"
+              element={
+                <PrivateRoute user={user}>
+                  <Bills />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/friends"
+              element={
+                <PrivateRoute user={user}>
+                  <Friends />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/camera"
+              element={
+                <PrivateRoute user={user}>
+                  <Camera />
+                </PrivateRoute>
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </Box>
     </ThemeProvider>
   );
 }

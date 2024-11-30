@@ -1,7 +1,9 @@
 // src/components/Profile.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Profile({ user }) {
+function Profile({ user, setUser }) {
+  const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
   const [profileData, setProfileData] = useState({
     username: user?.username || 'Guest',
@@ -23,6 +25,11 @@ function Profile({ user }) {
     setIsEditing(false);
     // In a real app, you would also save the updated data to a backend here
     alert('Profile updated!');
+  };
+
+  const handleLogout = () => {
+    setUser(null); // Clear user state
+    navigate('/login'); // Redirect to login page
   };
 
   return (
@@ -84,14 +91,17 @@ function Profile({ user }) {
       </div>
       <div className="profile-actions">
         {isEditing ? (
-          <button className="save-button" onClick={handleSave}>
+          <button className="button-colored" onClick={handleSave}>
             Save
           </button>
         ) : (
-          <button className="edit-button" onClick={handleEditClick}>
+          <button className="button-colored" onClick={handleEditClick}>
             Edit Profile
           </button>
         )}
+        <button className="button-outlined" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );

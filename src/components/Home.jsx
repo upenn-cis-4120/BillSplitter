@@ -1,27 +1,32 @@
-// src/components/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
+import logo from '../assets/logo512.png';
 
-function Home({ user }) {
+function Home() {
   const navigate = useNavigate();
 
-  const goToPage = (path) => {
-    navigate(path);
-  };
-
   return (
-    <div className="home">
-      <h1>Welcome to BillSplitter!</h1>
-      {user ? (
-        <div className="home-buttons">
-          <Button text="Go to Bills" onClick={() => goToPage('/bills')} />
-          <Button text="Go to Friends" onClick={() => goToPage('/friends')} />
-          <Button text="Take a Picture" onClick={() => goToPage('/camera')} />
-        </div>
-      ) : (
-        <p>Please register or log in to access your dashboard.</p>
-      )}
+    <div className="home" style={{ textAlign: 'center', padding: '20px' }}>
+      <div style={{ margin: '50px auto' }}>
+        <img 
+          src={logo} 
+          alt="BillSplitter Logo" 
+          style={{ maxWidth: '200px', height: 'auto' }} 
+        />
+      </div>
+      <div style={{ marginTop: '50px' }}>
+        <Button 
+          text="Create account" 
+          onClick={() => navigate('/register')} 
+          className="button-colored" // Custom class for outlined button
+        />
+        <Button
+          text="Log in" 
+          onClick={() => navigate('/login')} 
+          className="button-outlined" // Custom class for colored button
+        />
+      </div>
     </div>
   );
 }

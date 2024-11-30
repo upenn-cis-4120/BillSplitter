@@ -17,8 +17,8 @@ function Login({ setUser }) {
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
+    <div className="register">
+      <h2>Log in</h2>
       <input
         type="text"
         placeholder="Username"
@@ -31,7 +31,7 @@ function Login({ setUser }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Sign In</button>
+      <button onClick={handleLogin}>Log in</button>
     </div>
   );
 }

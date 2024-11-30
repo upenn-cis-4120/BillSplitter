@@ -304,11 +304,9 @@ ul {
 }
 
 li {
-    padding: 15px;
-    background-color: var(--light-gray);
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    margin-top: 15px;
     border-radius: var(--border-radius);
-    box-shadow: 0 1px 3px var(--shadow-color);
     width: 100%;
 }
 
@@ -366,7 +364,6 @@ li {
     width: 100%;
     margin: 3;  
     flex-wrap: nowrap;
-    background-color: transparent;
     gap: 5px;
     margin-top: 10px;
     justify-content: center;
@@ -386,6 +383,11 @@ li {
     width: 100px;
     transition: background-color 0.3s ease;
     */
+}
+
+.nav-link svg {
+    color: var(--primary-color);
+    transform: scale(1.4);
 }
 
 .nav-link:hover {

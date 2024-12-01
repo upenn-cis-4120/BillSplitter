@@ -1,29 +1,21 @@
-// src/components/Bills.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Bills({ filterLastMonths }) {
-  const initialTransactions = [
-    { id: 1, date: '2023-01-15', restaurant: 'Pizza Palace', amount: 40.0, friends: ['Alice', 'Bob'], status: 'Paid' },
-    { id: 2, date: '2023-02-10', restaurant: 'Sushi Spot', amount: 65.0, friends: ['Charlie'], status: 'Unpaid' },
-    { id: 3, date: '2023-03-05', restaurant: 'Burger Haven', amount: 25.0, friends: ['Alice', 'Dave'], status: 'Paid' },
-    { id: 4, date: '2023-03-22', restaurant: 'Pasta Place', amount: 55.0, friends: ['Bob', 'Eve'], status: 'Unpaid' },
-    { id: 5, date: '2023-04-10', restaurant: 'Taco Town', amount: 30.0, friends: ['Charlie', 'Dave'], status: 'Paid' },
-    { id: 6, date: '2023-04-20', restaurant: 'Steakhouse Deluxe', amount: 100.0, friends: ['Alice', 'Eve', 'Bob'], status: 'Paid' },
-    { id: 7, date: '2023-08-01', restaurant: 'Noodle House', amount: 40.0, friends: ['Bob'], status: 'Paid' },
-    { id: 8, date: '2023-09-10', restaurant: 'Mexican Grill', amount: 70.0, friends: ['Alice'], status: 'Unpaid' },
-  ];
-
-  const [transactions, setTransactions] = useState(initialTransactions.map((t) => ({ ...t, expanded: false })));
+  const [transactions, setTransactions] = useState([]);
   const [sortOption, setSortOption] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    let filteredTransactions = initialTransactions;
+    // Load receipts from local storage
+    const storedReceipts = JSON.parse(localStorage.getItem('receipts')) || [];
+    let filteredTransactions = storedReceipts;
 
     if (filterLastMonths) {
       const filterDate = new Date();
       filterDate.setMonth(filterDate.getMonth() - filterLastMonths);
 
-      filteredTransactions = initialTransactions.filter(transaction => {
+      filteredTransactions = storedReceipts.filter(transaction => {
         const transactionDate = new Date(transaction.date);
         return transactionDate >= filterDate;
       });
@@ -67,6 +59,33 @@ function Bills({ filterLastMonths }) {
     ));
   };
 
+  // Mark a transaction as paid or unpaid
+  const togglePaidStatus = (id) => {
+    setTransactions(transactions.map(transaction =>
+      transaction.id === id
+        ? { ...transaction, status: transaction.status === 'Paid' ? 'Unpaid' : 'Paid' }
+        : transaction
+    ));
+
+    // Update local storage
+    const updatedTransactions = transactions.map(transaction =>
+      transaction.id === id
+        ? { ...transaction, status: transaction.status === 'Paid' ? 'Unpaid' : 'Paid' }
+        : transaction
+    );
+    localStorage.setItem('receipts', JSON.stringify(updatedTransactions));
+  };
+
+  // Send receipt to a friend (placeholder function)
+  const handleSendToFriend = (transaction) => {
+    alert(`Sending receipt for ${transaction.restaurant} to ${transaction.friends.join(', ')}`);
+  };
+
+  // Navigate to Receipt Editor to add details to a new receipt
+  const handleAddReceipt = () => {
+    navigate('/camera');
+  };
+
   return (
     <div className="bills-page">
       <h2>{filterLastMonths ? `Recent Transactions (Last ${filterLastMonths} Months)` : 'All Restaurant Transactions'}</h2>
@@ -87,6 +106,10 @@ function Bills({ filterLastMonths }) {
         </select>
       </div>
 
+      <button onClick={handleAddReceipt} className="add-receipt-button">
+        Add New Receipt
+      </button>
+
       <div className="transactions-list">
         {transactions.length > 0 ? (
           transactions.map((transaction) => (
@@ -103,6 +126,20 @@ function Bills({ filterLastMonths }) {
                   <p className={`status ${transaction.status.toLowerCase()}`}>
                     <strong>Status:</strong> {transaction.status}
                   </p>
+                  {transaction.image && (
+                    <div className="receipt-image">
+                      <h4>Receipt Image:</h4>
+                      <img src={transaction.image} alt="Receipt" style={{ maxWidth: '100%' }} />
+                    </div>
+                  )}
+                  <div className="transaction-actions">
+                    <button onClick={() => togglePaidStatus(transaction.id)} className="toggle-paid-button">
+                      Mark as {transaction.status === 'Paid' ? 'Unpaid' : 'Paid'}
+                    </button>
+                    <button onClick={() => handleSendToFriend(transaction)} className="send-friend-button">
+                      Send to Friend
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

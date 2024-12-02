@@ -13,8 +13,13 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-konva": "^18.2.10",
+    "react-native-image-resizer": "^1.4.5",
+    "react-native-vision-camera": "^4.6.3",
+    "react-native-web": "^0.19.13",
     "react-router-dom": "^6.27.0",
     "react-scripts": "^5.0.1",
+    "tesseract.js": "^5.1.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

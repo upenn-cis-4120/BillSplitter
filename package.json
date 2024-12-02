@@ -52,5 +52,5 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.2.0"
   },
-  "homepage" : "https://upenn-cis-4120.github.io/BillSplitter/"
+  "homepage" : "https://upenn-cis-4120.github.io/BillSplitter"
 }

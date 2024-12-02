@@ -43,6 +43,10 @@ function App() {
               path="/"
               element={user ? <Navigate to="/dashboard" /> : <Navigate to="/home" />}
             />
+            <Route
+              path="/BillSplitter"
+              element={user ? <Navigate to="/dashboard" /> : <Navigate to="/home" />}
+            />
 
             {/* Public Routes */}
             <Route path="/login" element={<Login setUser={setUser} />} />

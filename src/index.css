@@ -157,6 +157,36 @@ h3 {
     border: 1px solid #ccc;
 }
 
+.add-receipt-button {
+    margin-bottom: 20px;
+}
+
+.friends-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-large);
+    margin-bottom: 100px;
+  }
+  
+  .friends-table th,
+  .friends-table td {
+    border: 1px solid #ccc;
+    padding: var(--spacing-small);
+    text-align: center;
+  }
+  
+  .friends-table th {
+    background-color: var(--light-gray);
+  }
+  
+  .friend-item .owe {
+    color: var(--primary-color);
+  }
+  
+  .friend-item .owed {
+    color: var(--paid-color);
+  }
+
 .owe {
     color: var(--primary-color);
 }

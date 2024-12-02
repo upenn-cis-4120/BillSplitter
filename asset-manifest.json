@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BillSplitter/static/css/main.06b9e74f.css",
-    "main.js": "/BillSplitter/static/js/main.d838191e.js",
+    "main.js": "/BillSplitter/static/js/main.8916614b.js",
     "static/js/731.5455c595.chunk.js": "/BillSplitter/static/js/731.5455c595.chunk.js",
     "static/js/680.4a442684.chunk.js": "/BillSplitter/static/js/680.4a442684.chunk.js",
     "static/js/716.836e4afd.chunk.js": "/BillSplitter/static/js/716.836e4afd.chunk.js",
@@ -14,7 +14,7 @@
     "static/media/logo512.png": "/BillSplitter/static/media/logo512.25cb97ea4bca6b667a5b.png",
     "index.html": "/BillSplitter/index.html",
     "main.06b9e74f.css.map": "/BillSplitter/static/css/main.06b9e74f.css.map",
-    "main.d838191e.js.map": "/BillSplitter/static/js/main.d838191e.js.map",
+    "main.8916614b.js.map": "/BillSplitter/static/js/main.8916614b.js.map",
     "731.5455c595.chunk.js.map": "/BillSplitter/static/js/731.5455c595.chunk.js.map",
     "680.4a442684.chunk.js.map": "/BillSplitter/static/js/680.4a442684.chunk.js.map",
     "716.836e4afd.chunk.js.map": "/BillSplitter/static/js/716.836e4afd.chunk.js.map",
@@ -27,6 +27,6 @@
   },
   "entrypoints": [
     "static/css/main.06b9e74f.css",
-    "static/js/main.d838191e.js"
+    "static/js/main.8916614b.js"
   ]
 }

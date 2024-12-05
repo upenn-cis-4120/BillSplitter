@@ -32,6 +32,14 @@ body {
     width: 100%;
 }
 
+.toggle-paid-button {
+    margin-bottom: 30px;
+}
+
+.send-friend-button {
+    margin-bottom: 30px;
+}
+
 .App {
     max-width: 75vh;
     margin: 0 auto;
@@ -101,6 +109,10 @@ h3 {
     font-size: 28px;
 }
 
+.bills-page {
+    margin-bottom: 30px;
+}
+
 .container,
 .register,
 .bills-page,
@@ -141,6 +153,10 @@ h3 {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.add-receipt-button {
+    margin-bottom: 30px;
 }
 
 .add-friend-section {

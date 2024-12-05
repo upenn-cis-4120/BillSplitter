@@ -1,17 +1,21 @@
 :root {
-    --primary-color: #2e7d32;
-    --primary-hover-color: #286c2c;
-    --secondary-color: #3fce46;
-    --secondary-hover-color: #2a9430;
-    --background-color: #f0f4ff;
-    --text-color: #333;
-    --white-color: #fff;
-    --light-gray: #f9f9f9;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-color: #38d543;
+    --primary-hover-color: #45ec50;
+    --secondary-color: #08d516;
+    --secondary-hover-color: #09ee18;
+    --background-color: #1a1a1a;
+    --text-color: #eeeeee;
+    --white-color: #1a1a1a;
+    --light-gray: #3a3a3a;
+    --shadow-color: rgba(95, 79, 79, 0.1);
     --border-radius: 8px;
-    --paid-color: #2e7d32;
-    --unpaid-color: var(--primary-color);
+    --paid-color: #38d543;
+    --unpaid-color: #d53838;
     --font-family: Arial, sans-serif;
+}
+
+input {
+    color: var(--text-color);
 }
 
 * {
@@ -19,6 +23,10 @@
     padding: 0;
     box-sizing: border-box;
     width: 100%;
+}
+
+p {
+    color: #eeeeee;
 }
 
 body {
@@ -38,6 +46,10 @@ body {
 
 .send-friend-button {
     margin-bottom: 30px;
+}
+
+.friend-item {
+    color: #eeeeee;
 }
 
 .App {
@@ -164,6 +176,7 @@ h3 {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+    color: #eeeeee;
 }
 
 .add-friend-section input,
@@ -278,6 +291,7 @@ input[type="email"],
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    color: #eeeeee;
 }
 
 .sort-options {
@@ -368,7 +382,7 @@ li {
     transform: translateX(-50%);
     width: 100%;
     max-width: 75vh;
-    background-color: white;
+    background-color: #1a1a1a;
     box-shadow: 0 -4px 2px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     justify-content: space-between;
@@ -462,7 +476,7 @@ li {
   
 .button-outlined:hover {
     background-color: var(--primary-hover-color);
-    color: #ffffff;
+    color: #1a1a1a;
 }
   
 .button-colored {
@@ -470,7 +484,7 @@ li {
     padding: 10px 20px;
     margin: 10px;
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: #1a1a1a;
     border: 2px solid var(--primary-color);
     border-radius: 25px;
     cursor: pointer;

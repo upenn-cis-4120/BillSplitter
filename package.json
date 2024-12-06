@@ -49,5 +49,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  },
+  "homepage": "https://upenn-cis-4120.github.io/BillSplitter"
 }

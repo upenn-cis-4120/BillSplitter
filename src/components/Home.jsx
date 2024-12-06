@@ -26,6 +26,11 @@ function Home() {
           onClick={() => navigate('/login')} 
           className="button-outlined" // Custom class for colored button
         />
+        <Button
+          text="About BillSplitter" 
+          onClick={() => navigate('/about')} 
+          className="button-colored" // Custom class for colored button
+        />
       </div>
     </div>
   );

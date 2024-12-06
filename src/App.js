@@ -14,6 +14,7 @@ const Dashboard = lazy(() => import('./components/Dashboard'));
 const Bills = lazy(() => import('./components/Bills'));
 const Friends = lazy(() => import('./components/Friends'));
 const Camera = lazy(() => import('./components/Camera'));
+const About = lazy(() => import('./components/About'));
 
 // PrivateRoute component for authentication
 function PrivateRoute({ user, children }) {
@@ -43,11 +44,16 @@ function App() {
               path="/"
               element={user ? <Navigate to="/dashboard" /> : <Navigate to="/home" />}
             />
+            <Route
+              path="/BillSplitter"
+              element={user ? <Navigate to="/dashboard" /> : <Navigate to="/home" />}
+            />
 
             {/* Public Routes */}
             <Route path="/login" element={<Login setUser={setUser} />} />
             <Route path="/register" element={<Register />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
 
             {/* Protected Routes */}
             <Route

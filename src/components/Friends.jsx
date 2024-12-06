@@ -1,13 +1,21 @@
-// src/components/Friends.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Friends() {
-  // Initial list of friends with amounts owed
-  const [friends, setFriends] = useState([
-  ]);
+  // Load friends from localStorage or initialize with an empty array
+  const loadFriendsFromStorage = () => {
+    const savedFriends = localStorage.getItem('friends');
+    return savedFriends ? JSON.parse(savedFriends) : [];
+  };
+
+  const [friends, setFriends] = useState(loadFriendsFromStorage);
 
   // State for the new friend input
   const [newFriend, setNewFriend] = useState('');
+
+  // Update localStorage whenever friends list changes
+  useEffect(() => {
+    localStorage.setItem('friends', JSON.stringify(friends));
+  }, [friends]);
 
   // Handle adding a new friend
   const handleAddFriend = () => {

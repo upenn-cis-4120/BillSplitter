@@ -10,7 +10,7 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
     --paid-color: #2e7d32;
-    --unpaid-color: var(--primary-color);
+    --unpaid-color: #7d2e2e;
     --font-family: Arial, sans-serif;
 }
 

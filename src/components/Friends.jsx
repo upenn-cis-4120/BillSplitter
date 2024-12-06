@@ -4,18 +4,6 @@ import React, { useState } from 'react';
 function Friends() {
   // Initial list of friends with amounts owed
   const [friends, setFriends] = useState([
-    { name: 'Adam', amountOwed: 20 },
-    { name: 'Hassan', amountOwed: -15 },
-    { name: 'Andrew', amountOwed: 0 },
-    { name: 'Devaughn', amountOwed: 30 },
-    { name: 'Sophia', amountOwed: -10 },
-    { name: 'Liam', amountOwed: 25 },
-    { name: 'Emily', amountOwed: -5 },
-    { name: 'Jackson', amountOwed: 0 },
-    { name: 'Olivia', amountOwed: 40 },
-    { name: 'Mason', amountOwed: -12 },
-    { name: 'Ava', amountOwed: 8 },
-    { name: 'Ethan', amountOwed: 0 }
   ]);
 
   // State for the new friend input

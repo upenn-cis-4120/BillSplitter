@@ -1,5 +1,5 @@
 import React, { useState, lazy, Suspense } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
 import theme from './theme';
 import Navbar from './components/Navbar';
@@ -23,6 +23,7 @@ function PrivateRoute({ user, children }) {
 
 function App() {
   const [user, setUser] = useState(null); // Manages user state
+  const location = useLocation();
 
   const navbarPaths = ['/dashboard', '/profile', '/bills', '/friends', '/camera']; // where navbar appears
 
@@ -30,7 +31,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box sx={{ maxWidth: '75vh', mx: 'auto', px: 2 }}>
-        {navbarPaths.includes(window.location.pathname) && (
+        {navbarPaths.includes(location.pathname) && (
           <Navbar user={user} setUser={setUser} />
         )}
         <Suspense fallback={

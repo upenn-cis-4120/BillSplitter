@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BillSplitter/static/css/main.3f3e5f8f.css",
-    "main.js": "/BillSplitter/static/js/main.573e73c8.js",
+    "main.js": "/BillSplitter/static/js/main.785231fd.js",
     "static/js/731.985d4296.chunk.js": "/BillSplitter/static/js/731.985d4296.chunk.js",
     "static/js/680.4a442684.chunk.js": "/BillSplitter/static/js/680.4a442684.chunk.js",
     "static/js/716.836e4afd.chunk.js": "/BillSplitter/static/js/716.836e4afd.chunk.js",
@@ -10,12 +10,13 @@
     "static/js/529.12715d2b.chunk.js": "/BillSplitter/static/js/529.12715d2b.chunk.js",
     "static/js/664.92ebed1a.chunk.js": "/BillSplitter/static/js/664.92ebed1a.chunk.js",
     "static/js/50.fb621f9b.chunk.js": "/BillSplitter/static/js/50.fb621f9b.chunk.js",
-    "static/js/124.f09c7fd4.chunk.js": "/BillSplitter/static/js/124.f09c7fd4.chunk.js",
+    "static/js/971.9cc3417e.chunk.js": "/BillSplitter/static/js/971.9cc3417e.chunk.js",
     "static/js/588.958fb866.chunk.js": "/BillSplitter/static/js/588.958fb866.chunk.js",
+    "static/media/IMG_4181.PNG": "/BillSplitter/static/media/IMG_4181.51550ae3327142ca3b89.PNG",
     "static/media/logo512.png": "/BillSplitter/static/media/logo512.25cb97ea4bca6b667a5b.png",
     "index.html": "/BillSplitter/index.html",
     "main.3f3e5f8f.css.map": "/BillSplitter/static/css/main.3f3e5f8f.css.map",
-    "main.573e73c8.js.map": "/BillSplitter/static/js/main.573e73c8.js.map",
+    "main.785231fd.js.map": "/BillSplitter/static/js/main.785231fd.js.map",
     "731.985d4296.chunk.js.map": "/BillSplitter/static/js/731.985d4296.chunk.js.map",
     "680.4a442684.chunk.js.map": "/BillSplitter/static/js/680.4a442684.chunk.js.map",
     "716.836e4afd.chunk.js.map": "/BillSplitter/static/js/716.836e4afd.chunk.js.map",
@@ -24,11 +25,11 @@
     "529.12715d2b.chunk.js.map": "/BillSplitter/static/js/529.12715d2b.chunk.js.map",
     "664.92ebed1a.chunk.js.map": "/BillSplitter/static/js/664.92ebed1a.chunk.js.map",
     "50.fb621f9b.chunk.js.map": "/BillSplitter/static/js/50.fb621f9b.chunk.js.map",
-    "124.f09c7fd4.chunk.js.map": "/BillSplitter/static/js/124.f09c7fd4.chunk.js.map",
+    "971.9cc3417e.chunk.js.map": "/BillSplitter/static/js/971.9cc3417e.chunk.js.map",
     "588.958fb866.chunk.js.map": "/BillSplitter/static/js/588.958fb866.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3f3e5f8f.css",
-    "static/js/main.573e73c8.js"
+    "static/js/main.785231fd.js"
   ]
 }

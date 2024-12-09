@@ -9,7 +9,7 @@ function Dashboard({ user, currentBalance }) {
       
       {/* Display Current Balance */}
       <div className="balance-section">
-        <h3>Current Balance: $937.64</h3>
+        <h3>Current Balance: $0.00</h3>
       </div>
       
       {/* Bills Section */}

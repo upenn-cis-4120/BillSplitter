@@ -37,7 +37,6 @@ BillSplitter is a mobile application designed to simplify the process of splitti
 
 *   **Frontend:** React Native (for PWA compatibility)
 *   **OCR:** Integrated Optical Character Recognition
-*   **Payment System:** Adaptable to integrate with various payment systems.
 
 ## Installation (PWA)
 

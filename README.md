@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# BillSplitter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![BillSplitter App Preview](BillSplitter.png)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+BillSplitter is a mobile application designed to simplify the process of splitting bills among friends. Built with React Native and deployed as a Progressive Web App (PWA), BillSplitter makes it easy to keep track of shared expenses, scan receipts, itemize purchases, and request payments.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*   **Easy Bill Splitting:** Tired of complicated calculations? BillSplitter allows you to effortlessly divide expenses among your friends.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*   **Optical Character Recognition (OCR):** The integrated camera functionality allows you to scan receipts, and the app uses OCR to itemize the purchases automatically.
 
-### `npm test`
+*   **Payment Tracking:** Keep track of payments owed to you by your friends, ensuring that you get paid quickly and easily.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*   **Receipt Storage:** Store digital copies of your receipts, so you can easily view past transactions at any time.
 
-### `npm run build`
+*   **Friend Management:** Add friends directly within the app, making it simple to manage group expenses.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*   **Payment System Integration:** Connect different payment systems for seamless payments, so you can send and receive money with ease.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*   **Mobile Friendly PWA:** As a Progressive Web App, BillSplitter can be accessed via a browser on any device, providing a smooth app-like experience with the added option to install it to your home screen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+*   **Payment Reminders:** Send reminders to friends to receive your payments quickly so you are not waiting on funds.
 
-### `npm run eject`
+## How it Works
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  **Capture a Receipt:** Use the built-in camera functionality to scan a receipt.
+2.  **Itemize Purchases:** The app's OCR will automatically identify the items and prices on the receipt.
+3.  **Assign Items to Friends:** Easily assign specific items to different friends or split the entire bill evenly.
+4.  **Track Payments:** BillSplitter automatically keeps track of who owes what, so you don't have to.
+5.  **Send Reminders:** Remind your friends to send you money.
+6. **Connect Payment Systems:** Connect your favorite online payment system to streamline transfers.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technology Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+*   **Frontend:** React Native (for PWA compatibility)
+*   **OCR:** Integrated Optical Character Recognition
+*   **Payment System:** Adaptable to integrate with various payment systems.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation (PWA)
 
-## Learn More
+1.  Open your browser on your mobile device.
+2.  Visit the deployed BillSplitter application's web address.
+3.  You may be prompted to "Add to Home Screen" or "Install" for an app-like experience.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*   After setting up your account, add friends that you commonly split bills with.
+*   When at a restaurant or after a shared purchase, scan your receipt.
+*   Distribute costs and send payment requests to the appropriate friends.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+We welcome any contributions to the project! Please feel free to open issues, submit pull requests, and provide feedback.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open source. Please feel free to use, modify and contribute to the codebase!
